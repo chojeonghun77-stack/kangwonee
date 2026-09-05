@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>젼 훈의 신혼여행 가이드 · 부다페스트→비엔나→잘츠부르크→할슈타트→프라하</title>
+
+<!-- 카카오톡 / 문자 공유용 미리보기 태그 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="젼 훈의 신혼여행 가이드">
+<meta property="og:title" content="젼 훈의 신혼여행 가이드">
+<meta property="og:description" content="9.14–9.24 · 부다페스트 → 비엔나 → 잘츠부르크 → 할슈타트 → 프라하 11박 12일 동유럽 신혼여행 일정 · 교통 · 음식 · 쇼핑 · 예약 가이드">
+<meta property="og:image" content="https://chojeonghun77-stack.github.io/kangwonee/budapest-parliament-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://chojeonghun77-stack.github.io/kangwonee/honeymoon-guide.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+  :root{
+    --ink:#1c2531;
+    --ink-soft:#2c3646;
+    --paper:#faf6ee;
+    --paper-dim:#f1ead8;
+    --paper-line:#e4d9bf;
+    --gold:#c2924e;
+    --gold-soft:#e8d3a8;
+    --hun:#8c3b3b;
+    --hun-soft:#f3e2df;
+    --aut:#3f6b4a;
+    --aut-soft:#e1ebe1;
+    --cze:#2e4c74;
+    --cze-soft:#dfe6ef;
+    --muted:#6b6558;
+    --line:#d9d0bb;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ink);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .serif{font-family:'Noto Serif KR', serif;}
+  #root{min-height:100vh;}
+  ::selection{background:var(--gold-soft);}
+
+  .app{
+    max-width:1180px;
+    margin:0 auto;
+    background:var(--paper);
+    min-height:100vh;
+    box-shadow:0 0 60px rgba(0,0,0,.35);
+  }
+  .topbar{
+    background:var(--ink);
+    color:var(--paper);
+    padding:22px 28px 18px;
+    position:sticky; top:0; z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .brand{display:flex; flex-direction:column; gap:2px;}
+  .brand .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:var(--gold-soft); opacity:.85;}
+  .brand h1{font-family:'Noto Serif KR',serif; font-size:22px; margin:2px 0 0; font-weight:700; letter-spacing:-.01em;}
+  .brand .route{font-size:12.5px; color:#c9cfd8; margin-top:4px;}
+  .tabs{display:flex; gap:4px; margin-top:16px; flex-wrap:wrap;}
+  .tab{
+    background:transparent; border:1px solid rgba(255,255,255,.16);
+    color:#d7dbe2; padding:8px 13px; border-radius:999px; font-size:13px;
+    cursor:pointer; font-family:'Noto Sans KR',sans-serif; font-weight:500;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .tab:hover{border-color:rgba(255,255,255,.4);}
+  .tab.active{background:var(--gold); border-color:var(--gold); color:#241a0c; font-weight:700;}
+
+  .content{padding:28px;}
+  @media (max-width:640px){ .content{padding:18px;} .topbar{padding:18px 16px 14px;} }
+
+  .route-rail{
+    display:flex; overflow-x:auto; gap:0; padding:6px 2px 18px;
+    border-bottom:1px solid var(--line); margin-bottom:22px;
+  }
+  .stop{ flex:0 0 auto; text-align:center; padding:0 15px; position:relative; cursor:pointer; min-width:70px; }
+  .stop:not(:last-child)::after{
+    content:''; position:absolute; top:22px; right:-2px; width:30px; height:2px; background:var(--line);
+  }
+  .stop .dot{ width:13px; height:13px; border-radius:50%; margin:8px auto 6px; border:2px solid var(--muted); background:var(--paper); }
+  .stop.active .dot{ background:var(--gold); border-color:var(--gold); box-shadow:0 0 0 4px var(--gold-soft); }
+  .stop .d{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted);}
+  .stop.active .d{color:var(--ink); font-weight:600;}
+  .stop .city{font-size:11px; color:#a89f8a; margin-top:2px; letter-spacing:.01em; line-height:1.3;}
+  .stop.active .city{color:var(--ink); font-weight:700;}
+
+  .day-head{display:flex; align-items:center; gap:14px; margin-bottom:6px; flex-wrap:wrap;}
+  .day-badge{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px; padding:5px 11px; border-radius:6px; color:#fff; }
+  .day-head h2{font-family:'Noto Serif KR',serif; font-size:24px; margin:0; font-weight:700;}
+  .day-sub{color:var(--muted); font-size:13.5px; margin:2px 0 22px;}
+
+  .grid2{display:grid; grid-template-columns:1.3fr 1fr; gap:22px;}
+  @media (max-width:860px){ .grid2{grid-template-columns:1fr;} }
+
+  .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:18px; }
+  .card h3{ font-family:'Noto Serif KR',serif; font-size:15px; margin:0 0 12px; font-weight:700; display:flex; align-items:center; gap:8px; }
+  .card h3 .bar{width:4px; height:15px; border-radius:2px; display:inline-block;}
+
+  table.sched{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.sched td{padding:9px 6px; border-top:1px solid var(--paper-line); vertical-align:top;}
+  table.sched tr:first-child td{border-top:none;}
+  table.sched .t{font-family:'IBM Plex Mono',monospace; color:var(--muted); white-space:nowrap; width:56px; font-size:12.5px; padding-top:11px;}
+  table.sched .ti{font-weight:600;}
+  table.sched .tr-note{color:var(--muted); font-size:12px; margin-top:2px;}
+
+  .note-block{background:var(--paper-dim); border-radius:8px; padding:13px 15px; font-size:13px; line-height:1.68; margin-bottom:10px;}
+  .note-block:last-child{margin-bottom:0;}
+  .note-block b{color:var(--ink);}
+  .note-block .steps{margin:8px 0 0; padding-left:18px;}
+  .note-block .steps li{margin-bottom:3px;}
+  .tip-label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; color:var(--gold); font-weight:600; display:block; margin-bottom:4px;}
+
+  .landmark{border-left:3px solid var(--gold-soft); padding:4px 0 4px 12px; margin-bottom:12px;}
+  .landmark:last-child{margin-bottom:0;}
+  .landmark .name{font-weight:700; font-size:13.5px;}
+  .landmark p{font-size:12.8px; color:#4a4438; margin:3px 0 0; line-height:1.6;}
+
+  .food-strip{ background:#fff; border:1px solid var(--gold-soft); border-radius:10px; padding:14px 16px; margin-bottom:18px; font-size:13px; line-height:1.7;}
+  .food-strip .tip-label{color:var(--hun);}
+
+  .culture-strip{ background:var(--ink); color:var(--paper); border-radius:10px; padding:16px 20px; margin-top:4px; font-size:13px; line-height:1.7; }
+  .culture-strip .tip-label{color:var(--gold-soft);}
+
+  .country-tabs{display:flex; gap:8px; margin-bottom:20px;}
+  .ctab{ flex:1; padding:12px; border-radius:9px; border:1.5px solid var(--line); background:#fff; cursor:pointer; text-align:center; font-weight:700; font-family:'Noto Serif KR',serif; font-size:14.5px; color:var(--muted);}
+  .ctab.active{border-color:currentColor; color:#fff;}
+  .section-title{font-family:'Noto Serif KR',serif; font-size:15px; font-weight:700; margin:22px 0 10px; display:flex; align-items:center; gap:8px;}
+  .section-title:first-child{margin-top:0;}
+  .section-title .bar{width:4px; height:14px; border-radius:2px;}
+  .pillbox{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:4px;}
+  .pill{background:var(--paper-dim); border-radius:7px; padding:9px 12px; font-size:12.8px; line-height:1.55; flex:1 1 45%;}
+  .pill b{display:block; font-size:11.5px; color:var(--muted); margin-bottom:2px; font-family:'IBM Plex Mono',monospace; font-weight:600;}
+  .warnlist{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;}
+  .warnlist li{font-size:13px; line-height:1.6; padding-left:18px; position:relative;}
+  .warnlist li::before{content:'—'; position:absolute; left:0; color:var(--gold);}
+  .histgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:700px){ .histgrid{grid-template-columns:1fr;} }
+  .lead-p{font-size:13.3px; line-height:1.75; color:#3a352b; margin:0 0 6px;}
+
+  .bk-item{border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:14px; background:#fff;}
+  .bk-item .bk-top{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .bk-item h4{font-family:'Noto Serif KR',serif; font-size:15px; margin:0; font-weight:700;}
+  .bk-when{font-family:'IBM Plex Mono',monospace; font-size:10.5px; background:var(--ink); color:var(--gold-soft); padding:3px 9px; border-radius:5px; white-space:nowrap;}
+  .bk-item p{font-size:13px; line-height:1.72; color:#3a352b; margin:10px 0 0;}
+  .bk-item .how{margin-top:8px; font-size:12.8px; background:var(--paper-dim); padding:11px 13px; border-radius:7px; line-height:1.7;}
+  .bk-item .how b{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--gold); display:block; margin-bottom:5px;}
+  .bk-item .how ol{margin:0; padding-left:18px;}
+  .bk-item .how ol li{margin-bottom:3px;}
+
+  .check-cat{margin-bottom:22px;}
+  .check-cat h3{font-family:'Noto Serif KR',serif; font-size:15px; margin:0 0 10px;}
+  .check-row{display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-top:1px solid var(--paper-line);}
+  .check-row:first-of-type{border-top:none;}
+  .check-row input{margin-top:3px; width:16px; height:16px; accent-color:var(--gold); flex:0 0 auto;}
+  .check-row .cname{font-weight:600; font-size:13.5px;}
+  .check-row .cdesc{font-size:12.3px; color:var(--muted); margin-top:2px; line-height:1.55;}
+
+  .food-card{border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:12px; background:#fff;}
+  .food-card .fname{font-family:'Noto Serif KR',serif; font-weight:700; font-size:14.5px;}
+  .food-card p{font-size:12.9px; line-height:1.7; color:#3a352b; margin:5px 0 0;}
+  .food-tag{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; background:var(--paper-dim); border-radius:5px; padding:2px 7px; margin-top:8px; color:var(--muted);}
+
+  .shop-card{border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:12px; background:#fff;}
+  .shop-card h4{font-family:'Noto Serif KR',serif; font-size:14.5px; margin:0 0 6px;}
+  .shop-card p{font-size:12.9px; line-height:1.7; color:#3a352b; margin:0;}
+  .gift-grid{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+  .gift-pill{background:var(--paper-dim); border-radius:999px; padding:6px 12px; font-size:12px;}
+
+  .footer-note{color:var(--muted); font-size:11.8px; text-align:center; padding:30px 20px 40px; line-height:1.8;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const {useState} = React;
+
+/* ============================= DATA ============================= */
+
+const COLORS = { hun: 'var(--hun)', aut: 'var(--aut)', cze: 'var(--cze)' };
+
+const DAYS = [
+{
+  id:1, date:'9.14(월)', dplus:'D+1', city:'부다페스트', color:COLORS.hun,
+  schedule:[
+    {t:'09:00', ti:'인천공항 2터미널 집결', note:'★ 여행 시작 · 출국 수속'},
+    {t:'12:45', ti:'인천(T2) → 부다페스트(T2B) 12:45–18:05', note:'대한항공 · 기내 10kg / 위탁 23kg · Flight Time 12h20m'},
+    {t:'19:00', ti:'공항 → 숙소', note:'100E 버스 · 3정거장(35분)+도보10분'},
+    {t:'19:40', ti:'H2 Hotel Budapest 체크인', note:'도시세 17,000원 · 조식포함'},
+    {t:'20:00', ti:'세체니다리 – 국회의사당 뷰포인트 – 어부의 요새', note:'첫 야경 산책 · 지하철 10회권 4,500Ft'},
+  ],
+  transport:[
+    {label:'대한항공 인천→부다페스트', body:'출발 전 온라인 체크인(24시간 전)을 해두면 리스트페렌츠 공항 입국 후 대기시간을 줄일 수 있어요. 기내 10kg·위탁 23kg 규정이니 캐리어 무게를 출발 전 집에서 미리 재보세요.', steps:['카카오T·네이버로 인천공항 도착 30~40분 전 도착하도록 리무진/공항철도 예약','출발 2~3시간 전 공항 도착, 대한항공 카운터에서 위탁수하물 체크인','수하물 태그 영수증은 분실 대비 사진으로 남겨두기']},
+    {label:'공항 → 시내, 100E 버스', body:'리스트페렌츠 국제공항(2터미널) 도착장을 나오면 바로 100E 급행버스 정류장이 있습니다. 숙소까지 3정거장(약 35분) 탑승 후 도보 10분. 편도 요금은 1인 900Ft 수준(2인 약 5,000Ft 예산)으로 일반 시내버스보다 비싼 전용 승차권이에요.',
+     how:'BudapestGO 앱 또는 공항 내 BKK 창구/자동판매기', steps:['앱스토어에서 "BudapestGO" 설치 후 카드 등록','노선 "100E" 검색 → 편도 승차권 구매 → QR코드 발급','버스 탑승 시 기사 옆 단말기에 QR 태그(자동 검표)','숙소 체류 중 지하철 10회권(4,500Ft)을 미리 구매해두면 이후 이동이 편함']},
+  ],
+  landmarks:[
+    {name:'세체니 다리 (Chain Bridge)', desc:'1849년 완공된 다뉴브강 최초의 상설 다리로, 부다와 페스트 두 지역을 처음 하나로 이어 지금의 "부다페스트"를 만든 상징적 구조물이에요. 건설을 주도한 세체니 이슈트반 백작의 이름을 땄습니다.'},
+    {name:'어부의 요새 (Fisherman\'s Bastion)', desc:'이름과 달리 실제 방어 요새가 아니라 1895~1902년에 지어진 전망 테라스예요. 7개의 첨탑은 헝가리를 세운 마자르 7부족을 상징합니다.'},
+  ],
+  food:'도착일이라 정식 식사 일정은 없지만, 첫날 야경 산책 후 숙소 근처에서 따뜻한 굴라쉬 수프 한 그릇으로 시차와 긴 비행 피로를 달래보세요. 헝가리 굴라쉬는 스튜가 아니라 수프에 가까운 형태가 정통이에요.',
+  culture:'헝가리 화폐는 유로가 아닌 포린트(HUF)예요. 공항이나 시내 ATM에서 소액만 인출하고 카드 결제를 주로 활용하세요. 길거리 사설 환전소보다는 은행 계열 환전소가 안전합니다.'
+},
+{
+  id:2, date:'9.15(화)', dplus:'D+2', city:'부다페스트', color:COLORS.hun,
+  schedule:[
+    {t:'10:00', ti:'그레이트 마켓 홀'},
+    {t:'점심', ti:'Retro Langos Budapest · 젤라또 로사 그란데', note:'랑고쉬'},
+    {t:'13:00', ti:'성 이슈트반 대성당 – 부다페스트 관람차 – 리틀 프린세스 동상'},
+    {t:'저녁', ti:'VakVarju Restaurant', note:'굴라쉬 · 6시 예약'},
+    {t:'19:00', ti:'겔레르트 언덕 – 부다성 – 어부의 요새 – 국회의사당 뷰포인트'},
+    {t:'21:30', ti:'다뉴브강 크루즈', note:'9시30분 예약'},
+    {t:'23:00', ti:'H2 Hotel Budapest 복귀'},
+  ],
+  transport:[
+    {label:'도보 + 대중교통 혼합', body:'페스트 지역(마켓홀·대성당)은 대부분 도보가 편하고, 겔레르트 언덕은 걸어 오르거나 트램 19/41번으로 언덕 아래까지 이동 후 도보로 오를 수 있어요.',
+     how:'BKK 24시간권(24-Hour Travelcard) 또는 D+1에 산 10회권', steps:['하루 4~5회 이상 탑승 예정이면 개별 승차권보다 24시간권이 이득','지하철역 자동발매기 또는 BudapestGO 앱에서 구매','트램·버스 탑승 시 별도 검표 없이 소지만 하면 되지만, 불시 검표원 확인에 대비해 항상 휴대']},
+    {label:'다뉴브강 야경 크루즈 (21:30 출발, 9시30분 예약)', body:'세체니다리·국회의사당·어부의 요새가 조명으로 물드는 밤에 강 위에서 바라보는 코스로, 이번 여행 하이라이트 중 하나예요. 인기 시간대(야간)는 성수기에 매진되는 경우가 많아 사전 예약이 필수입니다.',
+     how:'GetYourGuide/Viator 등에서 사전 예약, 또는 선착장 매표소', steps:['출발 최소 3~5일 전 온라인으로 승선 시간·인원 예약 후 모바일 바우처 수령','승선 15분 전 선착장 도착(위치는 세체니다리 인근 부두가 일반적)','야간 강바람이 차가우니 얇은 겉옷을 챙겨서 승선']},
+  ],
+  landmarks:[
+    {name:'중앙시장(그레이트 마켓 홀)', desc:'1897년 문을 연 부다페스트 최대 규모의 재래시장으로, 철골 구조 지붕이 특징인 헝가리 아르누보 건축의 대표작이에요.'},
+    {name:'성 이슈트반 대성당', desc:'헝가리 초대 국왕이자 건국자인 이슈트반 1세에게 헌정된 성당으로 1905년 완공되었어요. 국회의사당과 함께 부다페스트에서 가장 높은 건물(96m)로, 이는 "건국 96년(896년)"을 기리기 위한 의도적 설계입니다.'},
+    {name:'겔레르트 언덕', desc:'로마 시대부터 요새로 쓰였고, 정상의 치타델라는 19세기 합스부르크가 시민 봉기를 감시하려 세운 요새예요. 지금은 부다페스트 최고의 전망 포인트입니다.'},
+  ],
+  food:'점심 랑고쉬는 튀긴 반죽에 사워크림·치즈·마늘즙을 얹는 헝가리 대표 길거리 음식이에요. 저녁 굴라쉬로 든든하게 먹고 밤 크루즈에 오르는 코스이니, 크루즈 승선 전 화장실을 미리 다녀오는 것도 잊지 마세요. 마켓홀 2층 푸드코트의 살라미·파프리카 가루는 귀국 선물로도 인기가 많으니 눈여겨보세요.',
+  culture:'헝가리 레스토랑에서는 팁이 계산서에 자동 포함(서비스료)되지 않은 경우가 많아요. 영수증에 "Service charge"가 없다면 10% 내외를 별도로 남기는 것이 관례입니다. 계산 전 미리 영수증을 확인하는 습관을 들이세요.'
+},
+{
+  id:3, date:'9.16(수)', dplus:'D+3', city:'부다페스트 → 비엔나', color:COLORS.hun,
+  schedule:[
+    {t:'10:00', ti:'국회의사당 – 다뉴브 강가의 신발들 – 헝가리 국립 오페라 하우스 – 리스트 페렌츠 광장'},
+    {t:'점심', ti:'Menza Restaurant', note:'오리 리조또, 굴라쉬 · 1시 예약'},
+    {t:'15:30', ti:'숙소 → 기차역', note:'M2 지하철, 20분'},
+    {t:'16:00', ti:'부다페스트 → 비엔나 16:30–19:20', note:'OBB, Budapest-Keleti → Wien Hbf · 28.6€'},
+    {t:'19:30', ti:'Garner Hotel Vienna Prinz Eugen by IHG 체크인', note:'도보 · 기차역 바로 앞'},
+    {t:'저녁', ti:'Chil i& Cheesy', note:'햄버거'},
+    {t:'', ti:'프라터 놀이공원 야경', note:'교통권 24시간 19.4€'},
+  ],
+  transport:[
+    {label:'M2 지하철로 켈레티역 이동', body:'숙소 근처 M2(빨간선) 지하철역에서 켈레티(Keleti) 역까지 약 20분. 지하철 1회권을 개찰구 옆 펀칭기에 넣어 검표하는 것을 잊지 마세요. 무임승차 단속이 매우 엄격하고 즉석 벌금이 부과됩니다.'},
+    {label:'부다페스트 → 비엔나 국제열차 (OBB Railjet)', body:'켈레티역에서 빈 중앙역(Wien Hbf)까지 약 2시간 50분(16:30–19:20) 소요, 2인 기준 약 28.6€. 국경을 넘지만 두 나라 모두 솅겐조약국이라 별도 입국심사는 없어요.',
+     how:'oebb.at 또는 "ÖBB Rail Planner" 앱', steps:['출발 최소 1~2주 전 oebb.at 접속 → 출발/도착역·날짜·인원 입력','좌석 지정(Sitzplatzreservierung) 옵션 꼭 함께 체크 (성수기 매진 방지 + 캐리어 들고 헤매지 않기 위함)','해외 결제 가능 카드로 결제 후 모바일 QR 티켓 다운로드 및 스크린샷 저장(오프라인 대비)','열차 내 승무원이 QR을 스캔해 검표, 좌석 번호(예: Wagen 5, Platz 23)를 미리 확인해두면 편함']},
+    {label:'빈 도착 후 프라터 야경', body:'도착 첫날이니 무리하지 말고 숙소가 기차역 바로 앞이라 짐을 두고 가볍게 프라터 놀이공원까지 다녀오기 좋아요. 24시간 교통권(2인 19.4€)을 이 시점에 구매해두면 다음날 오전까지 자유롭게 쓸 수 있어요.'},
+  ],
+  landmarks:[
+    {name:'다뉴브 강가의 신발들', desc:'2005년 설치된 추모 기념물로, 2차 세계대전 말 화살십자당(헝가리 파시스트 정당)이 유대인들을 강가에서 신발을 벗긴 뒤 총살한 비극을 기리기 위해 세워졌어요. 철제 신발 60여 켤레가 놓여 있습니다.'},
+    {name:'헝가리 국립 오페라 하우스', desc:'1884년 완공된 네오르네상스 양식 건물로, 오스트리아 빈 국립오페라극장보다 작지만 음향이 더 뛰어나다는 평가를 받아요.'},
+  ],
+  food:'점심의 오리 리조또는 헝가리식 프렌치 퓨전 스타일이에요. 저녁은 이동일답게 가볍게 수제버거(Chil i& Cheesy)로 대체하니, 기차 안에서 허기지지 않도록 켈레티역 매점에서 간단한 간식을 미리 사는 것도 좋아요.',
+  culture:'헝가리 기차역(특히 켈레티역)은 소매치기와 호객 택시가 많기로 알려져 있어요. 캐리어는 항상 시야 안에 두고, "짐 옮겨드릴게요"라며 접근하는 사람은 정중히 거절하세요.'
+},
+{
+  id:4, date:'9.17(목)', dplus:'D+4', city:'비엔나', color:COLORS.aut,
+  schedule:[
+    {t:'10:00', ti:'부르크 극장 – 빈 시청 – 오스트리아 의회의사당 – 헬덴 광장'},
+    {t:'점심', ti:'립스 오브 비엔나', note:'12시 예약'},
+    {t:'13:00', ti:'카를 성당 – 오페라 극장 – 국립도서관 – 호프부르크 왕궁 – 슈테판 대성당 – 성 베드로 성당', note:'성 베드로 성당 3시 파이프오르간 연주'},
+    {t:'', ti:'카페 데멜 / 카페 센트럴', note:'비엔나 커피하우스'},
+    {t:'저녁', ti:'피그뮐러 2호점', note:'슈니첼 · 5시 예약'},
+    {t:'20:00', ti:'오페라 극장 야경'},
+  ],
+  transport:[
+    {label:'구시가지 도보 여행', body:'이날 방문지는 링슈트라세(Ringstraße) 안쪽 구시가지에 모두 모여 있어 대부분 도보로 충분합니다. 트램 1/2번을 타면 링슈트라세를 따라 주요 건물을 순환하며 구경할 수 있어 잠깐의 휴식용으로도 좋아요.'},
+    {label:'점심·저녁 모두 예약 필수', body:'점심 립스 오브 비엔나(12시), 저녁 피그뮐러 2호점(5시) 모두 사전 예약된 인기 맛집이에요. 예약 시간에 늦지 않게 동선을 역산해서 움직이세요.'},
+    {label:'성 베드로 성당 파이프오르간 연주', body:'매일 오후 3시경 무료로 진행되는 오르간 연주(입장료 없음)라 별도 예매는 필요 없지만, 좋은 자리를 잡으려면 연주 시작 10~15분 전 입장하는 것이 좋아요.'},
+    {label:'빈 대중교통권(Wiener Linien)', body:'체류 기간 동안 대중교통을 자주 쓸 계획이라면 24/48/72시간권을 구매하면 매번 티켓을 사는 번거로움을 줄일 수 있어요.',
+     how:'지하철역 자동발매기 또는 "WienMobil" 앱', steps:['자동발매기에서 언어를 영어로 변경 후 원하는 기간권 선택','종이 티켓은 별도 개찰 없이 소지만 하면 되나, 불시 검표에 대비해 항상 휴대']},
+  ],
+  landmarks:[
+    {name:'카를 성당', desc:'신성로마제국 황제 카를 6세가 1713년 흑사병 종식을 기원하며 봉헌한 바로크 성당이에요. 원기둥에 새겨진 나선형 부조가 로마 트라야누스 기둥을 본떴어요.'},
+    {name:'호프부르크 왕궁', desc:'13세기부터 20세기 초까지 합스부르크 왕가가 겨울궁전으로 사용하며 계속 증축한 궁전 복합단지예요. 시시(엘리자베트 황후) 박물관이 있는 곳이기도 합니다.'},
+    {name:'슈테판 대성당', desc:'비엔나의 상징으로, 알록달록한 모자이크 지붕이 유명한 고딕 양식 성당이에요. 모차르트가 이곳에서 결혼식을 올렸습니다.'},
+    {name:'성 베드로 성당', desc:'로마 콘스탄티누스 대제가 세웠다는 전설이 전해지는 유서 깊은 자리에, 현재 건물은 1701~1733년 바로크 양식으로 재건되었어요. 매일 무료 파이프오르간 연주로도 유명합니다.'},
+  ],
+  food:'점심 립스 오브 비엔나(폭립)와 저녁 피그뮐러 2호점(슈니첼)까지 하루에 두 끼 모두 묵직한 메뉴예요. 사이사이 카페 데멜·카페 센트럴에서 가벼운 커피와 자허토르테로 속도를 조절하는 걸 추천해요. 두 카페 모두 원조 논쟁이 있는 자허토르테를 각자의 방식으로 내는 걸로 유명합니다.',
+  culture:'오스트리아는 공공장소에서의 정숙함을 중요하게 여겨요. 카페·레스토랑에서 큰 목소리로 대화하는 것은 눈총을 받을 수 있습니다.'
+},
+{
+  id:5, date:'9.18(금)', dplus:'D+5', city:'비엔나 근교', color:COLORS.aut,
+  schedule:[
+    {t:'08:00', ti:'비엔나 → 판도르프 아울렛 08:18–08:51', note:'OBB, Wien Hbf → Parndorf Ort Bahnhst · 22.0€'},
+    {t:'08:51', ti:'기차역 → 아울렛 08:51–08:57', note:'아울렛 셔틀버스'},
+    {t:'', ti:'판도르프 아울렛 쇼핑', note:'게스트 서비스센터에서 바우처 발급 · Tax Refund(버거킹 옆)'},
+    {t:'', ti:'카페 자허'},
+    {t:'15:27', ti:'아울렛 → 기차역 15:27–15:38', note:'아울렛 셔틀버스'},
+    {t:'15:42', ti:'판도르프 → 비엔나 15:42–16:15', note:'OBB, Parndorf Ort Bahnhst → Wien Hbf · 22.0€'},
+    {t:'저녁', ti:'Falkensteiner Stuberl'},
+  ],
+  transport:[
+    {label:'빈 → 판도르프 아울렛 (Designer Outlet Parndorf)', body:'빈 중앙역에서 지역열차(REX)로 약 30분 거리예요(왕복 2인 약 22.0€×2). 국내 지역열차라 좌석예약이 필수는 아니에요.',
+     how:'역 자동발매기 또는 OBB 앱', steps:['Wien Hbf 자동발매기에서 "Parndorf Ort" 편도 또는 왕복권 구매','플랫폼 전광판에서 REX 노선 확인 후 탑승 (별도 개찰 없음, 랜덤 검표)','Parndorf Ort역 도착 후 아울렛 무료 셔틀버스 표지판을 따라가면 기차 도착 시간에 맞춰 셔틀 대기 중']},
+    {label:'아울렛 게스트 서비스센터 & 텍스프리', body:'아울렛 입구의 게스트 서비스센터에서 여권을 제시하면 추가 할인 바우처를 받을 수 있어요. 텍스프리(부가세 환급) 데스크는 버거킹 매장 옆에 있으니, 쇼핑 중 영수증을 잘 모아뒀다가 마지막에 한 번에 서류를 발급받으면 편해요.',
+     steps:['입구 게스트 서비스센터에서 여권 제시 → 할인 바우처 수령','매장별로 결제 시 여권 제시하며 "Tax Free 서류" 요청','쇼핑을 마친 뒤 버거킹 옆 Tax Refund 데스크에서 서류 정리(실제 환급은 최종 출국국에서)']},
+  ],
+  landmarks:[],
+  food:'점심 무렵 카페 자허에서 정통 자허토르테와 커피로 당 충전을 하고, 아울렛 내 푸드코트에서 오스트리아식 소시지(Käsekrainer, 치즈 소시지)도 함께 즐겨보세요. 저녁은 숙소 인근 Falkensteiner Stuberl에서 오스트리아 가정식으로 마무리합니다.',
+  culture:'오스트리아 상점은 대부분 일요일과 공휴일에 휴무예요. 평일에도 저녁 7~8시면 문을 닫는 곳이 많으니 쇼핑은 이날처럼 낮 시간에 계획하는 것이 좋습니다. 이날 쇼핑은 "쇼핑 & 기념품" 탭에 자세한 매장·환급 안내가 있어요.'
+},
+{
+  id:6, date:'9.19(토)', dplus:'D+6', city:'비엔나 → 잘츠부르크', color:COLORS.aut,
+  schedule:[
+    {t:'09:30', ti:'벨베데레 궁전'},
+    {t:'점심', ti:'Som Kitchen', note:'팟타이, 라이스'},
+    {t:'13:57', ti:'비엔나 → 잘츠부르크 13:57–16:49', note:'OBB, Wien Hbf → Salzburg Hbf · 39.8€'},
+    {t:'17:00', ti:'Austria Trend Europa Salzburg 체크인', note:'도보 · 기차역 바로 앞 · guest mobility 발급'},
+    {t:'', ti:'미라벨 정원 – 모차르트의 집 – 마카르트 다리 – 플리마켓'},
+    {t:'저녁', ti:'Die Weisse', note:'양조장'},
+    {t:'20:00', ti:'뮌히스베르크 현대미술관 야경'},
+  ],
+  transport:[
+    {label:'빈 → 잘츠부르크 국제열차', body:'빈 중앙역에서 약 2시간 50분(13:57–16:49) 소요되는 OBB 레일젯 노선이에요(2인 약 39.8€). 주말이라 혼잡할 수 있으니 좌석 지정을 꼭 함께 예약하세요.',
+     how:'OBB 앱/홈페이지에서 승차권+좌석 동시 예매', steps:['출발 최소 1주 전 예매 (주말·성수기는 좌석 매진 빠름)','모바일 QR 티켓 다운로드 후 오프라인 캡처 저장','Wien Hbf 전광판에서 플랫폼 확인 후 지정 칸(Wagen) 앞에서 대기']},
+    {label:'guest mobility 카드 발급 — 잘츠카머구트 지역 필수템', body:'Austria Trend Europa Salzburg 체크인 시 발급받는 이 카드는 잘츠부르크 근교(할슈타트 등 잘츠카머구트 지역) 대중교통을 무료 또는 할인가로 이용할 수 있게 해주는 숙박객 전용 지역카드예요. D+7 할슈타트 이동일에 꼭 필요하니 체크인 때 잊지 말고 요청하세요.'},
+    {label:'잘츠부르크 시내', body:'구시가지는 대부분 도보권이며, 숙소부터 미라벨 정원까지는 마카르트 다리를 건너 걸어서 15분 내외예요.'},
+  ],
+  landmarks:[
+    {name:'벨베데레 궁전', desc:'오스만 제국을 물리친 명장 오이겐 폰 사보이 공의 여름 궁전으로, 바로크 건축의 걸작이에요. 구스타프 클림트의 대표작 "키스"가 소장되어 있습니다.'},
+    {name:'미라벨 정원', desc:'17세기에 조성된 바로크 정원으로 영화 《사운드 오브 뮤직》의 촬영지로도 유명해요.'},
+  ],
+  food:'잘츠부르크의 명물 디저트 "모차르트쿠겔(모차르트 초콜릿볼)"은 미라벨 정원 근처 상점에서 시식 후 구매할 수 있어요. Die Weisse 양조장에서는 오스트리아식 밀맥주(Weissbier)와 프레첼 안주 조합을 꼭 즐겨보세요.',
+  culture:'오스트리아 레스토랑에서 팁은 계산서 금액을 카드로 결제하며 구두로 올려 말하거나(예: 47유로 → "50유로로 해주세요"), 현금으로 5~10% 얹어 주는 방식이 일반적이에요.'
+},
+{
+  id:7, date:'9.20(일)', dplus:'D+7', city:'할슈타트', color:COLORS.aut,
+  schedule:[
+    {t:'09:30', ti:'Salzburg Hbf → Bad Ischl Bahnhof', note:'150번 버스, 약 1시간 20분'},
+    {t:'11:14', ti:'Bad Ischl → Hintertal b. Gosau vorderer Gosausee', note:'541번 버스 → 542번 버스'},
+    {t:'12:12', ti:'고사우 호수 구경'},
+    {t:'12:50', ti:'Hintertal → Gosaumuhle → Hallstatt Lahn', note:'542번 버스 25분 → 543번 버스 10분 · guest mobility 버스 무료 / OOVV Freizeit ticket(2인) 26.5€'},
+    {t:'13:30', ti:'할슈타트 마을 구경'},
+    {t:'점심', ti:'seecafe', note:'파스타·피자, 호수뷰'},
+    {t:'16:03', ti:'Hallstatt Lahn → Bad Ischl Bahnhof', note:'544번 버스 → 541번 버스'},
+    {t:'17:07', ti:'Bad Ischl → Salzburg Hbf', note:'150번 버스, 약 1시간 20분'},
+    {t:'저녁', ti:'Strobl-Stuberl', note:'슈니첼, 해물스튜'},
+    {t:'20:00', ti:'게트라이데 거리 구경'},
+  ],
+  transport:[
+    {label:'가장 복잡한 이동일 · 전부 버스로 환승 (페리 없음)', body:'D+6에 발급받은 guest mobility 카드가 있으면 이 지역 버스(541/542/543/544/150 등)를 무료 또는 할인가로 탈 수 있어요. 카드가 커버하지 않는 구간은 OOVV Freizeit ticket(2인 26.5€, 하루권)으로 대체 구매하면 전 구간을 커버할 수 있습니다. 일요일은 배차 간격이 평일보다 넓으니 이 일정표 시간을 여유 있게 지키는 것이 중요해요.',
+     how:'"Postbus" 또는 "SVV(Salzburg Verkehrsverbund)" 앱 + guest mobility 카드', steps:['숙소에서 받은 guest mobility 카드를 항상 소지','앱스토어에서 "Postbus" 또는 "VOR/SVV" 설치 → 오프라인 대비 노선표 미리 캡처','정류장 표지판에서 버스 번호와 방향(목적지명) 재확인','카드로 커버되지 않는 구간이라면 기사에게 OOVV Freizeit ticket 구매 요청','환승할 때마다 정류장 이름을 스크린샷 해두면 헷갈리지 않음']},
+    {label:'짐 보관 팁', body:'당일치기 개념이라 큰 캐리어는 잘츠부르크 숙소에 맡겨두고 가벼운 백팩으로 다녀오는 것을 추천해요.'},
+  ],
+  landmarks:[
+    {name:'할슈타트', desc:'유네스코 세계문화유산으로 지정된 알프스 호숫가 마을이에요. 기원전 800년경부터 이어진 유럽 최초의 소금 광산 마을로, 고고학에서 말하는 "할슈타트 문화(초기 철기시대)"라는 명칭이 바로 이 마을에서 유래했습니다.'},
+  ],
+  food:'seecafe의 호수뷰 파스타·피자로 점심을 즐기고, 저녁은 Strobl-Stuberl에서 슈니첼과 해물스튜로 이날의 긴 이동을 마무리해요. 할슈타트 마을 안쪽 작은 베이커리의 애플슈트루델(Apfelstrudel)도 시간이 되면 놓치지 마세요. 소금광산 마을답게 지역 특산 소금(Hallstätter Salz)도 기념품으로 인기예요.',
+  culture:'오스트리아 버스·기차에서는 좌석에 발을 올리거나 큰 캐리어로 통로를 막지 않는 기본 매너를 지켜주세요. 시골 지역일수록 정시 운행에 대한 기대가 높아 정류장에 늦으면 기다려주지 않는 경우가 많습니다.'
+},
+{
+  id:8, date:'9.21(월)', dplus:'D+8', city:'잘츠부르크 → 프라하', color:COLORS.aut,
+  schedule:[
+    {t:'', ti:'호엔잘츠부르크성 – 잘츠부르크 대성당 – 모차르트 생가 – 마카르트 다리'},
+    {t:'점심', ti:'Lievitamente Pizzeria', note:'피자'},
+    {t:'14:00', ti:'잘츠부르크 → 프라하 14:11–19:39', note:'OBB, Salzburg Hbf → Praha hl.n. · 47.4€'},
+    {t:'', ti:'기차역 → 숙소', note:'지하철 20분 · 30분권 72Kč'},
+    {t:'20:00', ti:'Unitas Residence 체크인', note:'도시세 100Kč · 조식포함'},
+    {t:'저녁', ti:'코젤로브나'},
+  ],
+  transport:[
+    {label:'호엔잘츠부르크성 케이블카', body:'성까지는 걸어 오를 수도 있지만 푸니쿨라(케이블카)를 이용하는 것이 일반적이에요. 성수기 오전에는 대기줄이 길 수 있으니 오픈 직후 방문을 추천합니다.',
+     how:'성 입구 매표소 또는 salzburg-burgen.at', steps:['매표소에서 "Festungsbahn(푸니쿨라) + 성 입장" 콤보 티켓 구매','오픈 시간(보통 09:00) 직후 방문 시 대기 최소화']},
+    {label:'잘츠부르크 → 프라하 국제열차', body:'약 5시간 30분(14:11–19:39) 소요되는 장거리 구간이에요(2인 약 47.4€). 오스트리아 OBB와 체코 철도(České dráhy) 구간이 이어지는 노선입니다.',
+     how:'OBB 홈페이지·앱에서 전 구간 예매', steps:['좌석 지정 필수 체크(장거리 구간이라 미지정 시 자리 없을 수 있음)','환승 없는 직통편인지 확인 (환승 있는 경우 환승역·시간 메모)','국경 통과 시 여권 소지 (솅겐조약국 간 이동이라 별도 심사는 없음)']},
+    {label:'프라하 시내 진입', body:'프라하 중앙역(Praha hl.n.)에서 숙소까지는 지하철(메트로)로 약 20분, 30분권은 72Kč예요.',
+     how:'역 내 자동발매기', steps:['1회권(Jízdenka) 구매 (30분권/90분권 중 선택, 환승 포함 여부 확인)','탑승 전 반드시 노란색 개찰기에 티켓을 넣어 각인 (미각인 시 무임승차로 간주, 벌금 대상)']},
+  ],
+  landmarks:[
+    {name:'호엔잘츠부르크 성', desc:'1077년 건설이 시작되어 중부 유럽에서 가장 크고 보존이 잘 된 성 중 하나로 꼽혀요. 대주교들의 권력 기반이었던 곳입니다.'},
+  ],
+  food:'장거리 기차 이동일이니 잘츠부르크역 매점에서 샌드위치·오스트리아식 페이스트리를 미리 사서 기차 안에서 드시는 걸 추천해요. 프라하 도착 첫날 저녁은 코젤로브나에서 체코 대표 요리 "꼴레뇨(훈제 족발)"와 코젤 흑맥주로 시작해요. 1인분도 매우 커서 둘이 나눠 먹기 좋습니다.',
+  culture:'체코는 오스트리아·헝가리와 달리 유로가 아닌 체코 코루나(CZK)를 사용해요. 유로로 결제되는 곳도 있지만 환율이 불리하게 적용되는 경우가 많으니, 프라하 도착 후에는 코루나 현금이나 카드 결제를 기본으로 하세요.'
+},
+{
+  id:9, date:'9.22(화)', dplus:'D+9', city:'프라하', color:COLORS.cze,
+  schedule:[
+    {t:'10:00', ti:'황금소로 – 프라하성 – 성 비투스 성당 – 성모마리아 대성당', note:'입장료 900Kč'},
+    {t:'점심', ti:'스트라호프 양조장', note:'립'},
+    {t:'14:00', ti:'발트슈타인 궁전 – 레넌 벽 – 카를교 – 하벨 시장 – 프라하 천문시계 – 성 니콜라스 교회 – 화약탑'},
+    {t:'저녁', ti:'칸티나', note:'타르타르, 스테이크'},
+    {t:'20:00', ti:'구시가지 구경'},
+  ],
+  transport:[
+    {label:'프라하성 입장권', body:'프라하성 구역(성 비투스 성당·황금소로 등)은 관광 성수기에 매표소 줄이 매우 길어요. 이날 입장료는 2인 900Kč로 책정되어 있어요.',
+     how:'프라하성 공식 홈페이지(hrad.cz)', steps:['방문 며칠 전 hrad.cz 접속 → 티켓 메뉴 → 시간대 지정 입장권 예매','구역별(성당/황금소로/구왕궁) 통합권인 "Okruh B" 등 코스 확인 후 선택']},
+    {label:'오전-오후 동선', body:'오전엔 프라하성 구역(언덕 위)을 먼저 둘러보고, 점심 후 발트슈타인 궁전·레넌 벽을 거쳐 카를교를 건너 구시가지(하벨 시장·천문시계)로 내려오는 흐름이라 대부분 도보로 충분해요. 다리가 힘들면 트램 22번으로 성 입구까지 편하게 오를 수 있어요.'},
+  ],
+  landmarks:[
+    {name:'프라하성', desc:'기네스 세계기록에 등재된 세계에서 가장 큰 고대 성곽 단지예요. 9세기부터 건설이 시작되어 체코 대통령 관저로도 쓰이고 있습니다.'},
+    {name:'황금소로', desc:'16세기 성을 지키던 경비병과 연금술사, 장인들이 거주하던 좁은 골목이에요. 작가 프란츠 카프카가 한동안 글을 썼던 작은 파란 집(22번지)이 남아 있습니다.'},
+    {name:'카를교', desc:'1357년 카를 4세의 명으로 건설이 시작된 고딕 양식 다리로, 프라하성과 구시가지를 잇는 상징적 다리예요. 다리 위 30개의 성인 조각상이 유명합니다.'},
+    {name:'프라하 천문시계', desc:'1410년에 설치되어 지금까지 작동하는 세계에서 가장 오래된 천문시계 중 하나예요. 정각마다 12사도 인형이 움직이는 쇼가 열립니다.'},
+  ],
+  food:'점심 스트라호프 양조장은 수도원에서 직접 양조하는 맥주와 폭립 요리로 유명해요. 저녁 칸티나에서는 체코식 육회 "타르타르(Tatarák)"와 스테이크를 시도해보세요 — 타르타르는 마늘 토스트와 함께 나오는 것이 정통이에요.',
+  culture:'프라하 구시가지 광장과 카를교, 천문시계 주변은 소매치기 사고가 가장 많이 발생하는 지역이에요. 인파가 몰리는 정각 쇼 시간대에는 가방을 몸 앞쪽으로 메고 지퍼를 잠가두는 것을 추천합니다.'
+},
+{
+  id:10, date:'9.23(수)', dplus:'D+10', city:'프라하', color:COLORS.cze,
+  schedule:[
+    {t:'10:00', ti:'바츨라프 광장'},
+    {t:'점심', ti:"Pork's Vodickova", note:'꼴레뇨, 스프 · 1시 예약'},
+    {t:'15:00', ti:'숙소 → 공항', note:'지하철, 버스 · 90분권 92Kč'},
+    {t:'16:00', ti:'프라하(1터미널) → 인천(2터미널) 19:05–13:20(+1)', note:'대한항공 · 기내 10kg / 위탁 23kg · Flight Time 11h15m'},
+  ],
+  transport:[
+    {label:'프라하 공항 가는 법', body:'지하철 A선 또는 B선으로 종점 근처 역까지 이동한 뒤, 공항 리무진 버스(119번 등)로 환승하는 방법이 가장 저렴하고 정확해요. 90분권(환승 포함) 기준 92Kč예요.',
+     how:'지하철+버스 조합, 또는 공항버스(AE)', steps:['지하철로 Nádraží Veleslavín역(A선) 또는 Zličín역(B선)까지 이동','해당 역에서 119번/100번 공항버스로 환승','짐이 많다면 숙소~공항 직행 Airport Express(AE) 버스도 고려','대한항공 출발 3시간 전 공항 도착을 목표로 역산해서 출발']},
+    {label:'귀국 체크인', body:'출발 전날 미리 온라인 체크인을 해두면 공항에서 수속이 빠릅니다. 위탁수하물은 갈 때와 동일하게 23kg이니 참고하세요.'},
+  ],
+  landmarks:[
+    {name:'바츨라프 광장', desc:'이름과 달리 광장이라기보다 대로에 가까운 이곳은 체코 근현대사의 무대예요. 1968년 "프라하의 봄"과 1989년 공산정권을 무너뜨린 "벨벳혁명"이 모두 이 광장에서 시작되었습니다.'},
+  ],
+  food:'마지막 식사인 Pork\'s Vodickova의 꼴레뇨·스프로 여행을 마무리하기 좋아요. 공항 면세구역에서 체코 맥주(필스너 우르켈, 부드바이저 부드바르)를 선물용으로 챙기는 것도 추천합니다.',
+  culture:'체코는 유럽에서 1인당 맥주 소비량이 가장 많은 나라예요. 맥주 문화가 일상 그 자체이니, 마지막 밤은 현지 맥주 한 잔으로 여행을 마무리해도 좋아요.'
+},
+{
+  id:11, date:'9.24(목)', dplus:'D+11', city:'귀국', color:COLORS.cze,
+  schedule:[
+    {t:'13:20', ti:'인천공항 2터미널 도착'},
+    {t:'14:30', ti:'집으로'},
+  ],
+  transport:[
+    {label:'입국', body:'입국 심사 후 위탁수하물을 찾고, 세관 신고 물품이 있다면 붉은 라인으로 이동하세요. 유심을 정리하고 한국 통신망으로 전환하는 것도 이때 함께 처리하면 편합니다.'},
+  ],
+  landmarks:[],
+  food:'',
+  culture:'11박 12일간의 긴 여정, 고생 많으셨어요. 즐거운 신혼여행 되세요!'
+},
+];
+
+const COUNTRIES = {
+  hungary:{
+    key:'hungary', name:'헝가리', color:COLORS.hun, soft:'var(--hun-soft)',
+    history:'헝가리는 마자르족이 896년 카르파티아 분지에 정착하며 세워졌어요. 오스만 제국의 150년 지배, 오스트리아-헝가리 이중제국 시기를 거쳐 1989년 공산 정권이 무너지며 지금의 민주공화국이 되었습니다. 부다페스트는 원래 다뉴브강을 사이에 둔 "부다"와 "페스트"라는 별개의 도시였다가 1873년 통합되었어요.',
+    basic:[
+      {k:'언어', v:'헝가리어 (유럽에서 매우 독특한 핀우그리아어족)'},
+      {k:'화폐', v:'포린트 HUF (유로 미사용)'},
+      {k:'팁 문화', v:'영수증에 서비스료 포함 여부 확인 후 10% 내외'},
+      {k:'전압/플러그', v:'230V, Type C/F (한국과 동일 규격 콘센트)'},
+    ],
+    culture:['부다페스트는 유럽에서 손꼽히는 온천 도시예요. 세체니·겔레르트 온천 등은 로마 시대부터 이어진 온천 문화의 전통을 잇고 있어요.',
+      '식사 시간이 서유럽보다 다소 늦은 편이라 저녁 8시 이후에도 레스토랑이 붐빕니다.',
+      '헝가리인들은 자국어에 대한 자부심이 매우 커요. 영어가 통하는 관광지가 많지만 "안녕하세요(Szia)" 정도의 인사말을 건네면 반가워합니다.'],
+    etiquette:['건배할 때 맥주잔을 부딪치지 않는 것이 오랜 관습이에요. 1848년 독립운동 실패 후 오스트리아군이 맥주로 건배하며 조롱했다는 설에서 유래했다고 전해집니다(와인·칵테일 건배는 무관).',
+      '식당에서는 자리에 앉으면 직원이 올 때까지 기다리는 것이 일반적이며, 셀프서비스 매장이 아니면 카운터에 직접 가서 주문하지 않아요.',
+      '성당·교회 내부에서는 노출이 심한 옷차림을 피하고 조용히 관람하세요.'],
+    caution:['대중교통 무임승차 단속이 매우 엄격하고 즉석 벌금 규모도 커요. 표는 반드시 개찰(펀칭) 후 소지하세요.',
+      '켈레티 기차역 주변은 소매치기·호객 택시가 많은 편이니 캐리어와 소지품에 항상 주의하세요.',
+      '거리의 사설 환전소 중 환율을 속이는 경우가 있어요. 은행 계열 환전소나 카드 결제를 우선하세요.',
+      '레스토랑 계산서에 "관광객 전용 메뉴판"으로 바가지를 씌우는 일부 업소가 있으니, 메뉴판 가격을 사진으로 남겨두는 습관을 들이면 안전해요.'],
+    landmarks:[
+      {name:'국회의사당', period:'1904년 완공', desc:'네오고딕 양식의 다뉴브강변 랜드마크로, 완공 당시 유럽에서 가장 큰 의회 건물이었어요.'},
+      {name:'부다 왕궁', period:'13세기~', desc:'헝가리 역대 왕들의 거처였던 언덕 위 왕궁으로, 여러 차례의 전쟁으로 파괴와 재건을 반복했어요.'},
+    ]
+  },
+  austria:{
+    key:'austria', name:'오스트리아', color:COLORS.aut, soft:'var(--aut-soft)',
+    history:'오스트리아는 13세기부터 20세기 초까지 유럽 최대 왕가였던 합스부르크 가문의 본거지였어요. 한때 오스트리아-헝가리 제국으로 중부 유럽 대부분을 통치했지만, 1차 세계대전 패전으로 제국이 해체되며 지금의 작은 공화국이 되었습니다. 비엔나는 그 시절의 영광을 담은 궁전과 음악 유산이 도시 곳곳에 남아있어요.',
+    basic:[
+      {k:'언어', v:'독일어(오스트리아식 표준어)'},
+      {k:'화폐', v:'유로 EUR'},
+      {k:'팁 문화', v:'카드 결제 시 구두로 반올림 요청, 현금은 5~10% 얹어 지불'},
+      {k:'전압/플러그', v:'230V, Type C/F (한국과 동일 규격 콘센트)'},
+    ],
+    culture:['비엔나 커피하우스 문화는 2011년 유네스코 인류무형문화유산으로 등재됐어요. 커피 한 잔으로 몇 시간을 머무는 것이 자연스러운 곳입니다.',
+      '오스트리아는 클래식 음악의 본고장이에요. 모차르트·베토벤·슈베르트가 활동한 도시가 바로 비엔나입니다.',
+      '재활용과 질서 의식이 강해요. 쓰레기는 반드시 분리배출하고, 대중교통 승하차 시 새치기하지 않는 것이 기본 매너입니다.'],
+    etiquette:['오스트리아인은 격식과 호칭을 중요하게 여겨요. 처음 만난 사이엔 이름 대신 성(姓)을 부르는 것이 예의입니다.',
+      '레스토랑에서는 자리를 잡고 앉기 전에 종업원이 안내할 때까지 기다리는 곳이 많아요.',
+      '식사 중 손은 테이블 위에(팔꿈치는 올리지 않고) 두는 것이 격식 있는 매너로 여겨집니다.'],
+    caution:['공공장소에서 큰 목소리로 대화하는 것은 실례로 여겨질 수 있어요.',
+      '일요일에는 대형마트를 포함해 대부분의 상점이 문을 닫으니 생필품·간식은 미리 준비하세요.',
+      '판도르프 같은 근교 지역은 대중교통 배차 간격이 넓은 편이니 시간표를 꼭 확인하세요.',
+      '무단횡단 단속이 실제로 이뤄지는 편이니 신호를 꼭 지키세요.'],
+    landmarks:[
+      {name:'호프부르크 왕궁', period:'13세기~20세기', desc:'합스부르크 왕가가 600년 넘게 거주하며 계속 증축한 겨울 궁전이에요.'},
+      {name:'슈테판 대성당', period:'12세기 착공', desc:'모자이크 타일 지붕이 상징인 비엔나의 고딕 성당으로, 모차르트가 결혼식을 올린 곳이에요.'},
+      {name:'벨베데레 궁전', period:'18세기 초', desc:'오이겐 폰 사보이 공의 여름 궁전으로 클림트의 "키스"가 전시되어 있어요.'},
+    ]
+  },
+  czech:{
+    key:'czech', name:'체코', color:COLORS.cze, soft:'var(--cze-soft)',
+    history:'체코는 9세기 보헤미아 왕국에서 출발해, 14세기 카를 4세 치세에 신성로마제국의 중심지로 번영했어요(프라하성·카를교가 이 시기 유산). 이후 합스부르크 제국에 편입되었다가 1918년 체코슬로바키아로 독립, 1993년 슬로바키아와 평화적으로 분리(벨벳 이혼)되며 지금의 체코가 되었습니다.',
+    basic:[
+      {k:'언어', v:'체코어'},
+      {k:'화폐', v:'체코 코루나 CZK (유로 미사용, 주의!)'},
+      {k:'팁 문화', v:'대체로 10% 내외, 계산서 확인 후 지불'},
+      {k:'전압/플러그', v:'230V, Type C/E (한국 Type C 플러그 대부분 호환)'},
+    ],
+    culture:['체코는 세계에서 1인당 맥주 소비량이 가장 많은 나라예요. 맥주 양조장 레스토랑에서 식사와 함께 즐기는 것이 현지식입니다.',
+      '프라하는 "백탑의 도시"라 불릴 만큼 고딕·바로크 건축이 잘 보존되어 있어요.',
+      '체코인들은 영어보다 독일어에 익숙한 세대도 있으니, 간단한 체코어 인사("Ahoj", "Děkuji")를 알아두면 좋아요.'],
+    etiquette:['레스토랑에 들어서면 직원이 자리를 안내할 때까지 입구에서 잠시 기다리는 것이 일반적이에요.',
+      '팁은 계산서 금액을 말할 때 구두로 올려 말하는 방식(오스트리아와 유사)이 흔합니다.',
+      '건물 안에서는 낯선 사람과도 목례를 하는 등 예의를 차리는 문화가 있어요.'],
+    caution:['프라하 구시가지·카를교·천문시계 주변은 유럽 내에서도 소매치기 빈도가 높은 관광지예요. 인파 속에서 가방을 앞으로 메세요.',
+      '체코는 유로가 아닌 코루나를 씁니다. 일부 관광지에서 유로를 받더라도 환율이 불리하니 카드나 코루나 현금을 쓰는 것이 유리해요.',
+      '메트로·트램 탑승 전 반드시 티켓을 개찰기에 각인해야 해요. 미각인 적발 시 벌금이 상당히 큽니다.',
+      '구시가지 광장 주변 일부 환전소는 "무수수료"를 내세우지만 환율 자체를 매우 불리하게 적용해요. 후기 좋은 환전소(예: eXchange 체인)를 이용하세요.'],
+    landmarks:[
+      {name:'프라하성', period:'9세기~', desc:'기네스 등재 세계 최대 규모의 고대 성곽 단지로, 현재도 체코 대통령 관저로 쓰여요.'},
+      {name:'카를교', period:'1357년 착공', desc:'카를 4세가 건설을 명한 고딕 다리로, 30개의 성인상이 늘어서 있어요.'},
+      {name:'천문시계', period:'1410년 설치', desc:'세계에서 가장 오래된 작동 천문시계 중 하나로, 정각마다 12사도 인형극이 펼쳐져요.'},
+    ]
+  }
+};
+
+const FOOD = {
+  hungary:{ intro:'헝가리 음식은 파프리카를 듬뿍 쓰는 진하고 뜨끈한 요리가 많아요. 온천 도시답게 든든한 국물 요리로 몸을 데우는 문화가 발달했습니다.',
+    musts:[
+      {name:'굴라쉬 (Gulyás)', desc:'파프리카로 맛을 낸 소고기 수프. 스튜가 아니라 국물이 있는 수프 형태가 정통이에요.', tag:'D+1, D+2, D+3 일정에 포함'},
+      {name:'랑고쉬 (Lángos)', desc:'튀긴 반죽 위에 사워크림·치즈·마늘즙을 얹어 먹는 국민 길거리 간식.', tag:'D+2 일정에 포함'},
+      {name:'쿠르토쉬칼라치 (Kürtőskalács)', desc:'설탕과 계피를 입혀 구운 원통형 "굴뚝빵". 시장·길거리 어디서나 판매.', tag:'간식 추천'},
+      {name:'헝가리 파프리카 치킨 (Paprikás Csirke)', desc:'파프리카 크림소스에 조린 닭요리, 뇨키와 함께 나옴.', tag:'레스토랑 추천'},
+      {name:'토카이 와인 (Tokaji)', desc:'"왕들의 와인"이라 불린 헝가리산 디저트 와인.', tag:'저녁 반주 추천'},
+    ]},
+  austria:{ intro:'오스트리아는 튀김 요리와 빵, 디저트 문화가 발달했어요. 커피와 디저트를 함께 즐기는 카페 문화도 식문화의 큰 축입니다.',
+    musts:[
+      {name:'비엔나 슈니첼 (Wiener Schnitzel)', desc:'얇게 두드린 송아지고기(또는 돼지고기)를 튀긴 오스트리아 대표 요리.', tag:'D+4 피그뮐러 2호점, D+7 Strobl-Stuberl'},
+      {name:'폭립 (Ribs)', desc:'오스트리아식으로 부드럽게 훈제·구운 폭립 요리.', tag:'D+4 립스 오브 비엔나(점심)'},
+      {name:'자허토르테 (Sachertorte)', desc:'살구잼을 사이에 넣은 진한 초콜릿 케이크. 카페 자허가 원조.', tag:'D+4 카페 데멜·센트럴, D+5 카페 자허'},
+      {name:'애플슈트루델 (Apfelstrudel)', desc:'얇은 페이스트리에 사과·계피를 채워 구운 디저트.', tag:'디저트 추천'},
+      {name:'모차르트쿠겔 (Mozartkugel)', desc:'피스타치오 마지팬과 누가를 초콜릿으로 감싼 잘츠부르크 명물.', tag:'D+6 잘츠부르크 기념품'},
+      {name:'케제크라이너 (Käsekrainer)', desc:'치즈가 들어간 오스트리아식 소시지, 길거리 부스에서 판매.', tag:'D+5 아울렛 간식'},
+    ]},
+  czech:{ intro:'체코 음식은 맥주와 함께 먹기 좋은 진한 고기 요리 위주예요. "맥주의 나라"답게 어느 식당이든 맥주 페어링을 추천해줍니다.',
+    musts:[
+      {name:'꼴레뇨 (Vepřové koleno)', desc:'통째로 구운 훈제 족발. 1인분도 매우 커서 나눠 먹기 좋음.', tag:'D+8 코젤로브나, D+10 Pork\'s Vodickova'},
+      {name:'타르타르 (Tatarák)', desc:'체코식 소고기 육회, 마늘 토스트와 함께 나오는 것이 정통.', tag:'D+9 칸티나'},
+      {name:'스비치코바 (Svíčková)', desc:'크림소스를 곁들인 쇠고기 요리, 크네들리키(체코식 빵만두)와 함께.', tag:'레스토랑 추천'},
+      {name:'트르들로 (Trdelník)', desc:'설탕과 견과류를 묻힌 원통형 구움 과자, 관광지 길거리 간식.', tag:'D+8 도착 간식'},
+      {name:'필스너 우르켈 / 코젤 흑맥주', desc:'체코는 필스너 맥주의 발상지. 코젤(Kozel) 흑맥주도 유명.', tag:'D+8 코젤로브나, D+9 스트라호프 양조장'},
+      {name:'굴라시 (체코식)', desc:'헝가리 굴라쉬와 달리 걸쭉한 스튜 형태, 크네들리키와 함께 먹음.', tag:'레스토랑 추천'},
+    ]},
+};
+
+const SHOPPING = {
+  hungary:{
+    areas:[
+      {name:'그레이트 마켓 홀(중앙시장)', desc:'2층 기념품 구역에서 헝가리 자수 제품, 파프리카 가루, 살라미, 토카이 와인을 한 번에 구경·구매할 수 있어요.'},
+      {name:'바치 거리(Váci utca)', desc:'부다페스트 최대 쇼핑 거리. 브랜드 매장부터 기념품숍까지 밀집해 있어요.'},
+      {name:'프리미엄 아울렛 부다페스트', desc:'시내에서 조금 떨어져 있어 이번 일정엔 포함되지 않았지만, 시간이 남는다면 참고할 만한 근교 아울렛이에요.'},
+    ],
+    giftIdeas:['헝가리 파프리카 가루','토카이 디저트 와인','헤렌드/졸너이 도자기','헝가리 자수 식탁보','살라미·거위간(푸아그라) 통조림'],
+    taxfree:'헝가리 부가가치세는 27%로 EU 최고 수준이라 텍스프리 환급 효과가 큽니다. 한 매장에서 74,001포린트 이상 구매 시 환급 대상이며, 결제 시 "Tax Free 서류 발급"을 요청하고 여권을 제시하세요. 공항 출국 심사 전 Tax Free 데스크에서 도장을 받아야 환급이 진행됩니다.'
+  },
+  austria:{
+    areas:[
+      {name:'디자이너 아울렛 판도르프 (D+5 일정)', desc:'빈 근교 대형 아울렛으로 구찌·프라다부터 아디다스·나이키까지 명품~스포츠 브랜드가 폭넓게 입점해 있어요. 부모님·가족 선물을 한 번에 해결하기 좋은 날입니다.'},
+      {name:'케른트너 거리 & 그라벤 거리', desc:'비엔나 구시가지의 대표 쇼핑가로, 스와로브스키 매장·백화점이 몰려 있어요.'},
+      {name:'미라벨 정원 플리마켓 (D+6 일정)', desc:'잘츠부르크 일정에 포함된 벼룩시장으로, 현지 소품·빈티지 기념품을 구경하기 좋아요.'},
+    ],
+    giftIdeas:['스와로브스키 크리스탈 소품','모차르트쿠겔 초콜릿','자허토르테(진공포장 선물세트)','에델바이스 문양 기념품','오스트리아산 펌킨시드 오일'],
+    taxfree:'오스트리아 부가세는 20%예요. 한 매장에서 75.01유로 이상 구매 시 환급 대상이며, 판도르프 아울렛 내 대부분 매장은 Global Blue/Planet 텍스프리 서류를 즉석 발급해줘요. 서류와 영수증, 실물(미개봉)을 챙겨 프라하 출국 시 최종 환급받으면 됩니다(EU 마지막 출국국에서 처리).'
+  },
+  czech:{
+    areas:[
+      {name:'하벨 시장 (D+9 일정)', desc:'프라하 대표 재래시장으로, 마리오네트 인형·목공예품·마그넷 등 기념품이 풍부해요.'},
+      {name:'파르지주스카 거리', desc:'구시가지 광장 인근 명품 쇼핑가.'},
+      {name:'팰러디움 / 노비 스미호프', desc:'프라하 시내 대형 쇼핑몰, 다양한 브랜드와 슈퍼마켓이 있어 비교적 저렴하게 선물을 구입하기 좋아요.'},
+      {name:'패션 아레나 프라하 아울렛', desc:'프라하 외곽에 위치한 아울렛으로, 이번 일정엔 포함되지 않았지만 시간 여유가 있다면 참고할 만해요(시내에서 버스로 약 20분).'},
+    ],
+    giftIdeas:['보헤미안 크리스탈/유리공예','마리오네트 인형','필스너 우르켈·코젤 맥주 세트','체코 목공예 장난감','트르들로 믹스(홈메이드 키트)'],
+    taxfree:'체코 부가세는 21%예요. 한 매장에서 2,001코루나 이상 구매 시 환급 대상이며, 결제 시 여권을 제시해 텍스프리 서류를 받으세요. 체코가 이번 여행의 마지막 국가이니, 프라하 공항 출국 심사 전 세관(Customs) 도장을 꼭 받은 뒤 환급 데스크에서 현금 또는 카드로 환급받으면 됩니다.'
+  }
+};
+
+const TIPS = [
+  {icon:'📶', title:'통신 · 유심/이심', body:'헝가리·오스트리아·체코 3국 모두 커버하는 유럽 통합 유심이나 이심을 출발 전 준비하면 국경을 넘을 때마다 통신사를 바꿀 필요가 없어요. 공항 도착 후 유심을 바로 교체할 계획이라면, 유심핀과 원래 유심 보관용 케이스를 잊지 마세요.'},
+  {icon:'🔌', title:'전압 · 콘센트', body:'세 나라 모두 230V, Type C/F 표준 유럽 플러그를 사용해요. 한국 220V 기기는 별도 변압기 없이 대부분 바로 사용 가능하지만, 헤어드라이어 등 고전력 기기는 사용 전 전압 표기를 확인하세요.'},
+  {icon:'🕐', title:'시차', body:'9월은 서머타임 기간이라 한국보다 7시간 느려요(한국 오후 4시 = 현지 오전 9시). 도착 첫날은 시차 적응을 위해 무리한 일정보다 가벼운 야경 산책 정도로 시작하는 것이 이번 일정처럼 좋습니다.'},
+  {icon:'🚨', title:'응급상황', body:'유럽 공통 응급번호는 112(경찰·구급·소방 모두 연결)예요. 여권 분실 시에는 가까운 대한민국 대사관·영사관에 연락하세요(빈에 주오스트리아 대사관, 프라하에 주체코 대사관 소재). 여행자보험 가입 시 받은 긴급연락처도 미리 저장해두세요.'},
+  {icon:'💊', title:'약국 이용', body:'약국은 초록색 십자가 마크(때로는 빨간색)로 표시돼요. 저녁·주말엔 문 닫는 약국이 많지만, 문 앞에 그 시간대 영업 중인 "당번 약국(Notdienst-Apotheke)" 안내문이 붙어 있으니 참고하세요.'},
+  {icon:'🚻', title:'화장실', body:'유럽은 유료 공중화장실이 많아요(0.5~1유로 내외). 동전을 소지하고 다니는 것이 편하고, 카페·레스토랑 이용 시 화장실을 무료로 쓸 수 있는 경우가 많아요.'},
+  {icon:'💳', title:'카드 · 현금', body:'세 나라 모두 컨택리스 카드 결제가 널리 통용돼요. 해외 결제 수수료가 없는 트래블카드(트래블월렛, 트래블로그 등)를 미리 만들어두면 환전 스트레스가 크게 줄어요. 다만 헝가리·체코는 소규모 상점·시장에서 현금만 받는 곳도 있으니 소액 현지 화폐는 챙기세요.'},
+  {icon:'📸', title:'사진 촬영 매너', body:'성당·궁전 내부는 플래시 촬영이 금지된 곳이 많고, 일부 전시관은 촬영 자체가 금지돼요. 입장 시 안내판의 카메라 아이콘(금지선)을 꼭 확인하세요.'},
+  {icon:'📱', title:'유용한 앱 모음', body:'구글맵(길찾기), Google 번역(카메라 실시간 번역 유용), BudapestGO(헝가리 교통), Wiener Linien/WienMobil(오스트리아 교통), ÖBB Rail Planner(국제열차), Bolt/Uber(택시), 카카오톡(가족과 실시간 위치 공유도 추천).'},
+  {icon:'🥤', title:'식수', body:'세 나라 모두 수돗물 음용이 가능한 수준이지만, 여행 중에는 생수를 구매해 마시는 것을 추천해요. 레스토랑에서 "물"을 주문하면 유료 생수(탄산 Sparkling/일반 Still 선택)가 나오는 것이 일반적입니다.'},
+];
+
+const CHECKLIST = [
+  {cat:'여행 서류', items:[
+    {n:'여권 유효기간 확인', d:'출국일 기준 잔여 유효기간 6개월 이상 권장'},
+    {n:'여권 사본 촬영/클라우드 저장', d:'분실 대비, 여권용 사진 1매도 함께'},
+    {n:'대한항공 e-티켓/예약확인서 출력 또는 저장'},
+    {n:'각 도시 숙소 예약 확인서 저장', d:'H2 Hotel, Garner Hotel, Austria Trend Europa, Unitas Residence'},
+    {n:'해외여행자보험 가입', d:'분실·의료비·항공기 지연 보장 항목 확인'},
+    {n:'국제운전면허증', d:'렌트 계획이 없다면 생략 가능'},
+  ]},
+  {cat:'교통 예약', items:[
+    {n:'부다페스트→비엔나 OBB 열차 예약 (9.16)'},
+    {n:'비엔나→잘츠부르크 OBB 열차 예약 (9.19)'},
+    {n:'잘츠부르크→프라하 OBB 열차 예약 (9.21)'},
+    {n:'프라하성 시간대 지정 입장권 예매 (9.22)'},
+    {n:'BudapestGO / WienMobil / SVV 앱 미리 설치'},
+  ]},
+  {cat:'전자기기', items:[
+    {n:'유럽 유심/이심'},
+    {n:'멀티 어댑터(Type C/F)', d:'헝가리·오스트리아·체코 모두 동일 타입, 2개 이상 챙기면 편함'},
+    {n:'보조배터리(기내 반입, 위탁 금지)'},
+    {n:'카메라·짐벌·삼각대(스냅 촬영 예정 시)'},
+    {n:'각 기기 충전 케이블 및 멀티탭'},
+  ]},
+  {cat:'의류 · 미용', items:[
+    {n:'9월 중순 일교차 대비 겉옷', d:'평균 낮 18~22℃, 아침저녁 10℃ 내외 — 얇은 니트·바람막이 권장'},
+    {n:'편한 운동화(도보 위주 일정)'},
+    {n:'성당 방문용 어깨/무릎 가리는 옷'},
+    {n:'우산 또는 우비', d:'9월 중부유럽은 소나기가 잦은 편'},
+    {n:'선크림·선글라스'},
+    {n:'웨딩스냅/커플룩 의상(촬영 계획 시)'},
+  ]},
+  {cat:'건강 · 안전', items:[
+    {n:'상비약(진통제, 소화제, 밴드, 지사제)'},
+    {n:'멀미약(장거리 기차·버스 이동 많음)'},
+    {n:'손소독제, 마스크'},
+    {n:'평소 복용 약(영문 처방전 지참)'},
+  ]},
+  {cat:'현지 화폐 · 결제', items:[
+    {n:'헝가리 포린트(HUF) 소액 환전 또는 현지 ATM 인출'},
+    {n:'체코 코루나(CZK) 소액 환전 또는 현지 ATM 인출', d:'오스트리아만 유로(EUR) 사용'},
+    {n:'해외 결제 수수료 없는 트래블카드 개설'},
+    {n:'동전 소지', d:'유료 화장실·짐 보관함 등에 필요'},
+  ]},
+  {cat:'쇼핑 · 선물 준비', items:[
+    {n:'가족 선물 리스트 미리 작성', d:'"쇼핑 & 기념품" 탭의 나라별 추천 참고'},
+    {n:'텍스프리(Tax Free) 서류용 여권 지참 습관화'},
+    {n:'캐리어 여유 공간/여분 접이식 가방', d:'귀국길 아울렛·기념품 부피 대비'},
+  ]},
+  {cat:'출국 당일', items:[
+    {n:'대한항공 온라인 체크인 (24시간 전)'},
+    {n:'위탁수하물 무게 재확인 (23kg 이내)'},
+    {n:'기내 반입 액체류 100ml 이하 규정 확인'},
+    {n:'공항 이동수단(리무진/공항철도) 예약'},
+  ]},
+];
+
+/* ============================= COMPONENTS ============================= */
+
+function Sched({items}){
+  return (
+    <table className="sched"><tbody>
+      {items.map((r,i)=>(
+        <tr key={i}>
+          <td className="t">{r.t}</td>
+          <td>
+            <div className="ti">{r.ti}</div>
+            {r.note && <div className="tr-note">{r.note}</div>}
+          </td>
+        </tr>
+      ))}
+    </tbody></table>
+  );
+}
+
+function DayView({day}){
+  return (
+    <div>
+      <div className="day-head">
+        <span className="day-badge" style={{background:day.color}}>{day.dplus}</span>
+        <h2>{day.city}</h2>
+      </div>
+      <div className="day-sub">{day.date} · 여행 {day.id}일차</div>
+
+      <div className="grid2">
+        <div>
+          <div className="card">
+            <h3><span className="bar" style={{background:day.color}}></span>일정표</h3>
+            <Sched items={day.schedule} />
+          </div>
+
+          <div className="card">
+            <h3><span className="bar" style={{background:day.color}}></span>이동 · 예약 상세 안내</h3>
+            {day.transport.map((tp,i)=>(
+              <div className="note-block" key={i}>
+                <span className="tip-label">{tp.label}</span>
+                {tp.body}
+                {tp.how && <div style={{marginTop:8, fontSize:'12.3px'}}><b>어디서/어떻게:</b> {tp.how}</div>}
+                {tp.steps && <ol className="steps">{tp.steps.map((s,j)=><li key={j}>{s}</li>)}</ol>}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          {day.landmarks.length>0 &&
+          <div className="card">
+            <h3><span className="bar" style={{background:day.color}}></span>명소 이야기</h3>
+            {day.landmarks.map((l,i)=>(
+              <div className="landmark" key={i}>
+                <div className="name">{l.name}</div>
+                <p>{l.desc}</p>
+              </div>
+            ))}
+          </div>}
+
+          {day.food && <div className="food-strip">
+            <span className="tip-label">오늘의 음식 추천</span>
+            {day.food}
+          </div>}
+
+          <div className="culture-strip" style={{marginTop: day.food? '12px':'0'}}>
+            <span className="tip-label">현지 문화 팁</span>
+            {day.culture}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ItineraryTab(){
+  const [sel, setSel] = useState(1);
+  const day = DAYS.find(d=>d.id===sel);
+  return (
+    <div>
+      <div className="route-rail">
+        {DAYS.map(d=>(
+          <div key={d.id} className={"stop"+(d.id===sel?' active':'')} onClick={()=>setSel(d.id)}>
+            <div className="dot" style={d.id===sel?{background:d.color, borderColor:d.color, boxShadow:'0 0 0 4px '+d.color+'33'}:{}}></div>
+            <div className="d">{d.dplus}</div>
+            <div className="city">{d.city.replace(' → ','→').split('→')[0]}</div>
+          </div>
+        ))}
+      </div>
+      <DayView day={day} />
+    </div>
+  );
+}
+
+function CountryTab(){
+  const [sel, setSel] = useState('hungary');
+  const c = COUNTRIES[sel];
+  return (
+    <div>
+      <div className="country-tabs">
+        {Object.values(COUNTRIES).map(cc=>(
+          <div key={cc.key}
+               className={"ctab"+(sel===cc.key?' active':'')}
+               style={sel===cc.key?{background:cc.color, borderColor:cc.color, color:'#fff'}:{color:cc.color}}
+               onClick={()=>setSel(cc.key)}>
+            {cc.name}
+          </div>
+        ))}
+      </div>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>나라의 역사</div>
+      <p className="lead-p">{c.history}</p>
+
+      <div className="pillbox">
+        {c.basic.map((b,i)=>(
+          <div className="pill" key={i}><b>{b.k}</b>{b.v}</div>
+        ))}
+      </div>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>문화와 생활</div>
+      <ul className="warnlist">{c.culture.map((t,i)=><li key={i}>{t}</li>)}</ul>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>매너 · 에티켓</div>
+      <ul className="warnlist">{c.etiquette.map((t,i)=><li key={i}>{t}</li>)}</ul>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>주의해야 할 점</div>
+      <ul className="warnlist">{c.caution.map((t,i)=><li key={i}>{t}</li>)}</ul>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>주요 명소의 역사</div>
+      <div className="histgrid">
+        {c.landmarks.map((l,i)=>(
+          <div className="landmark" key={i}>
+            <div className="name">{l.name} <span style={{color:'var(--muted)', fontWeight:400, fontSize:'11.5px'}}>· {l.period}</span></div>
+            <p>{l.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BookingTab(){
+  const BOOKING_GUIDE = [
+    {when:'출발 전 (~D-14)', title:'국제 구간열차 좌석 예약 (부다페스트→비엔나 / 비엔나→잘츠부르크 / 잘츠부르크→프라하)',
+     body:'세 구간 모두 OBB(오스트리아 국철) 홈페이지(oebb.at) 또는 "ÖBB Rail Planner" 앱에서 한국에서 미리 예매할 수 있어요. 좌석 지정을 함께 신청하면 성수기에도 자리를 두고 헤매지 않아도 됩니다.',
+     how:['oebb.at 접속 → 출발/도착역·날짜 입력','좌석지정(Sitzplatzreservierung) 옵션 체크','해외카드로 결제','모바일 티켓(QR) 다운로드 후 캡처 저장(오프라인 대비)']},
+    {when:'출발 전 (~D-5)', title:'다뉴브강 야경 크루즈 (부다페스트, 9.15 밤 21:30)',
+     body:'세체니다리·국회의사당·어부의 요새가 조명에 물드는 야경을 강 위에서 감상하는 코스로, 이번 여행 하이라이트 중 하나예요. 성수기 야간 타임은 매진이 잦으니 미리 예약하세요.',
+     how:['GetYourGuide/Viator 등에서 날짜·인원·시간 선택 후 예약','모바일 바우처 다운로드','승선 15분 전 선착장(세체니다리 인근) 도착']},
+    {when:'현지에서, 체크인 시', title:'guest mobility 카드 (잘츠부르크 숙소에서 발급)',
+     body:'Austria Trend Europa Salzburg 체크인 시 요청하면 받을 수 있는 지역 교통카드로, D+7 할슈타트 이동일의 여러 버스 구간을 무료/할인가로 이용할 수 있어요. 체크인할 때 꼭 발급을 요청하세요.'},
+    {when:'출발 전 (~D-7)', title:'프라하성 시간대 지정 입장권',
+     body:'성수기 매표소 줄이 길기로 유명해요. 프라하성 공식 홈페이지에서 입장 시간대를 지정해 예매하면 대기 없이 들어갈 수 있습니다.',
+     how:['hrad.cz(프라하성 공식 홈페이지) 접속','티켓 메뉴 → 방문 날짜·시간 선택','코스(Okruh A/B/C) 선택 후 예매']},
+    {when:'출발 전, 선택', title:'인기 레스토랑 예약 (피그뮐러, 립스 오브 비엔나 등)',
+     body:'비엔나의 유명 슈니첼집 피그뮐러는 웨이팅이 긴 편이라 방문 며칠 전 홈페이지나 전화로 예약해두면 대기 없이 이용할 수 있어요.',
+     how:['각 레스토랑 공식 홈페이지 예약(Reservation) 메뉴 확인','또는 현지 도착 후 호텔 프런트에 전화 예약 요청']},
+    {when:'현지에서, 당일', title:'잘츠카머구트 지역버스 (150 / S41 / S42 / S43)',
+     body:'사전 예매가 필수는 아니에요. "Postbus" 또는 "SVV" 앱으로 시간표를 확인하고, 승차 시 기사에게 현금·카드로 결제하면 됩니다.',
+     how:['앱스토어에서 "Postbus" 또는 "VOR/SVV" 설치','노선번호·시간 확인','정류장에서 승차 후 기사에게 결제']},
+    {when:'현지에서, 당일', title:'부다페스트 공항버스(100E) · 시내 대중교통',
+     body:'"BudapestGO" 앱 하나로 100E 버스부터 지하철·트램까지 모두 구매·검표할 수 있어요.',
+     how:['"BudapestGO" 앱 설치 → 회원가입','노선/구간권 구매','QR 티켓으로 탑승 시 태그']},
+    {when:'현지에서, 당일', title:'빈 대중교통권 (Wiener Linien)',
+     body:'지하철역 자동발매기나 "WienMobil" 앱에서 24/48/72시간권을 구매하면 개별 승차권보다 경제적이에요.',
+     how:['지하철역 자동발매기 또는 "WienMobil" 앱','기간권 선택 후 구매']},
+    {when:'현지에서, 당일', title:'할슈타트 호수 페리',
+     body:'할슈타트 마을 선착장에서 기차 시간에 맞춰 운행하는 소형 배로, 예약 없이 현장에서 현금으로 결제하면 됩니다.'},
+    {when:'출발 전', title:'유심 / 이심, 로밍',
+     body:'유럽 전역(헝가리·오스트리아·체코 모두 커버)에서 쓸 수 있는 유럽 통합 유심 또는 이심을 출발 전 준비하면 국경을 넘을 때마다 통신사를 바꿀 필요가 없어요.'},
+  ];
+  return (
+    <div>
+      <div className="section-title"><span className="bar" style={{background:'var(--gold)'}}></span>예약 가이드 — 언제, 무엇을, 어디서</div>
+      {BOOKING_GUIDE.map((b,i)=>(
+        <div className="bk-item" key={i}>
+          <div className="bk-top">
+            <h4>{b.title}</h4>
+            <span className="bk-when">{b.when}</span>
+          </div>
+          <p>{b.body}</p>
+          {b.how && <div className="how"><b>어디서 / 어떻게</b><ol>{b.how.map((s,j)=><li key={j}>{s}</li>)}</ol></div>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function FoodTab(){
+  const [sel, setSel] = useState('hungary');
+  const c = COUNTRIES[sel];
+  const f = FOOD[sel];
+  return (
+    <div>
+      <div className="country-tabs">
+        {Object.values(COUNTRIES).map(cc=>(
+          <div key={cc.key} className={"ctab"+(sel===cc.key?' active':'')}
+               style={sel===cc.key?{background:cc.color, borderColor:cc.color, color:'#fff'}:{color:cc.color}}
+               onClick={()=>setSel(cc.key)}>{cc.name} 음식</div>
+        ))}
+      </div>
+      <p className="lead-p">{f.intro}</p>
+      {f.musts.map((m,i)=>(
+        <div className="food-card" key={i}>
+          <div className="fname">{m.name}</div>
+          <p>{m.desc}</p>
+          <span className="food-tag">{m.tag}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ShoppingTab(){
+  const [sel, setSel] = useState('hungary');
+  const c = COUNTRIES[sel];
+  const s = SHOPPING[sel];
+  return (
+    <div>
+      <div className="country-tabs">
+        {Object.values(COUNTRIES).map(cc=>(
+          <div key={cc.key} className={"ctab"+(sel===cc.key?' active':'')}
+               style={sel===cc.key?{background:cc.color, borderColor:cc.color, color:'#fff'}:{color:cc.color}}
+               onClick={()=>setSel(cc.key)}>{cc.name} 쇼핑</div>
+        ))}
+      </div>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>쇼핑 스팟</div>
+      {s.areas.map((a,i)=>(
+        <div className="shop-card" key={i}><h4>{a.name}</h4><p>{a.desc}</p></div>
+      ))}
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>가족 선물 추천</div>
+      <div className="gift-grid">{s.giftIdeas.map((g,i)=><span className="gift-pill" key={i}>{g}</span>)}</div>
+
+      <div className="section-title"><span className="bar" style={{background:c.color}}></span>텍스프리(부가세 환급) 안내</div>
+      <p className="lead-p">{s.taxfree}</p>
+    </div>
+  );
+}
+
+function TipsTab(){
+  return (
+    <div>
+      <div className="section-title"><span className="bar" style={{background:'var(--gold)'}}></span>여행가이드가 알려주는 꿀팁</div>
+      <div className="grid2">
+        {TIPS.map((t,i)=>(
+          <div className="card" key={i}>
+            <h3><span style={{fontSize:'17px'}}>{t.icon}</span>{t.title}</h3>
+            <p style={{fontSize:'12.9px', lineHeight:1.72, color:'#3a352b', margin:0}}>{t.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ChecklistTab(){
+  return (
+    <div>
+      <div className="section-title"><span className="bar" style={{background:'var(--gold)'}}></span>출발 전 최종 체크리스트</div>
+      {CHECKLIST.map((cat,i)=>(
+        <div className="check-cat" key={i}>
+          <h3>{cat.cat}</h3>
+          {cat.items.map((it,j)=>(
+            <label className="check-row" key={j}>
+              <input type="checkbox" />
+              <div>
+                <div className="cname">{it.n}</div>
+                {it.d && <div className="cdesc">{it.d}</div>}
+              </div>
+            </label>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function App(){
+  const [tab, setTab] = useState('itinerary');
+  const TABS = [
+    {k:'itinerary', label:'일정 (D+1~D+11)'},
+    {k:'booking', label:'교통 · 예약 가이드'},
+    {k:'country', label:'나라별 문화 가이드'},
+    {k:'food', label:'음식 가이드'},
+    {k:'shopping', label:'쇼핑 & 기념품'},
+    {k:'tips', label:'여행 꿀팁'},
+    {k:'checklist', label:'체크리스트'},
+  ];
+  return (
+    <div className="app">
+      <div className="topbar">
+        <div className="brand">
+          <span className="eyebrow mono">JEON · HOON HONEYMOON JOURNAL</span>
+          <h1 className="serif">젼 훈의 신혼여행 가이드</h1>
+          <div className="route">9.14 – 9.24 · 부다페스트 → 비엔나 → 잘츠부르크 → 할슈타트 → 프라하</div>
+        </div>
+        <div className="tabs">
+          {TABS.map(t=>(
+            <button key={t.k} className={"tab"+(tab===t.k?' active':'')} onClick={()=>setTab(t.k)}>{t.label}</button>
+          ))}
+        </div>
+      </div>
+
+      <div className="content">
+        {tab==='itinerary' && <ItineraryTab/>}
+        {tab==='booking' && <BookingTab/>}
+        {tab==='country' && <CountryTab/>}
+        {tab==='food' && <FoodTab/>}
+        {tab==='shopping' && <ShoppingTab/>}
+        {tab==='tips' && <TipsTab/>}
+        {tab==='checklist' && <ChecklistTab/>}
+      </div>
+
+      <div className="footer-note">
+        본 가이드는 첨부된 일정표를 바탕으로 작성되었습니다. 열차·버스 시간표와 요금은 현지 사정에 따라 바뀔 수 있으니<br/>
+        출발 전 OBB(oebb.at), BudapestGO, Wiener Linien, hrad.cz 등 공식 채널에서 최종 확인하세요. 행복한 신혼여행 되세요 💛
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
